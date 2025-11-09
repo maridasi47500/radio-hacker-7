@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myhacker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+<link rel="stylesheet" href="/path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/myplayer.css">
+  </head>
+
+  <body>
+<button onclick="mymenu.style.display='block';" type="button">MENU</button>
+<nav id="mymenu">
+    <%= link_to "[X]", "",onclick:"mymenu.style.display='none';return false;" %>
+    <%= link_to "ajoute une radio rss", new_rssradio_path %>
+    <%= link_to "ajoute une radio json", new_jsonradio_path %>
+    <%= link_to "voir toutes les chansons", songs_path %>
+    <%= link_to "voir toutes les chansons", songs_path %>
+    <%= link_to "ecouter toutes les chansons", allsong_songs_path %>
+<ul>
+  <% @rssradios.each do |radio| %>
+    <li>
+      <%= link_to "hacker #{radio.name}", scriptradio_rssradio_path(radio) %> 
+    </li>
+  <% end %>
+</ul>
+
+<ul>
+  <% @jsonradios.each do |radio| %>
+    <li>
+      <%= link_to "hacker #{radio.name} - avec le Nom des musiques", nommusiques1_jsonradio_path(radio) %>
+    </li>
+    <li>
+      <%= link_to "hacker #{radio.name} - pour telecharger le musique ", downloadmusic2_jsonradio_path(radio) %>
+    </li>
+  <% end %>
+</ul>
+
+    <%= link_to "hacker la radio mistralfm", hack_radio_path %>
+    <%= link_to "hacker la radio metis script1", hack_metis1_path %>
+    <%= link_to "hacker la radio metis script2", hack_metis2_path %>
+    <%= link_to "hacker la radio cherie fm script1", hack_cherie1_path %>
+    <%= link_to "hacker la radio cherie fm script2", hack_cherie2_path %>
+    <%= link_to "hacker la radio nrj guyane script1", hack_nrjguyane1_path %>
+    <%= link_to "hacker la radio nrj guyane script2", hack_nrjguyane2_path %>
+    <%= link_to "hacker la radio radio peyi script1", hack_radiopeyi1_path %>
+    <%= link_to "hacker la radio radio peyi script2", hack_radiopeyi2_path %>
+    <%= link_to "hacker la radio bblack script1", hack_bblack1_path %>
+    <%= link_to "hacker la radio bblack script2", hack_bblack2_path %>
+</nav>
+<main>
+    <%= yield %>
+</main>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="/js/main.js"></script>
+  </body>
+</html>

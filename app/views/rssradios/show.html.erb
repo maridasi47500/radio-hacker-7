@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @rssradio.name %>
+</p>
+
+<p>
+  <strong>Pic:</strong>
+  <%= @rssradio.pic %>
+</p>
+
+<p>
+  <strong>Stream:</strong>
+  <%= @rssradio.stream %>
+</p>
+
+<p>
+  <strong>Mysong:</strong>
+  <%= @rssradio.mysong %>
+</p>
+
+<p>
+  <strong>Mytime:</strong>
+  <%= @rssradio.mytime %>
+</p>
+
+<%= link_to 'Edit', edit_rssradio_path(@rssradio) %> |
+<%= link_to 'Back', rssradios_path %>

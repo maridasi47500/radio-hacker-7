@@ -1,0 +1,24 @@
+<table>
+                    <tr>
+                 <th>Artist</th>
+                 <th>Song</th>
+                 <th>Time heard</th>
+                    </tr>
+                    <%@songs.each do |song|%>
+                    <tr class="song">
+                    <td><%=song["title"]%></td>
+                    <td><%=song["artist"]%></td>
+                    <td><%=song["time"]%></td>
+                    </tr>    
+                    <%end%>
+</table>
+<div id="div1"></div>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script>
+  window.onload=function(){
+   setTimeout(function(){ $.ajax({url:window.location.pathname+".js",type:'GET',success:function(){
+         $('#div1').append('req\n');
+       } }) ;}, 60000);
+   
+  }
+ </script>

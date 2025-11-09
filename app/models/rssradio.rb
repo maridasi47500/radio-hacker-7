@@ -1,0 +1,2 @@
+class Rssradio < ApplicationRecord
+end

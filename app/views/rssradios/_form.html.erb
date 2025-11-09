@@ -1,0 +1,74 @@
+<%= form_with(model: rssradio, local: true) do |form| %>
+  <% if rssradio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rssradio.errors.count, "error") %> prohibited this rssradio from being saved:</h2>
+
+      <ul>
+        <% rssradio.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pic %>
+    <%= form.text_field :pic %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stream %>
+    <%= form.text_field :stream %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mysong %>
+    <%= form.text_field :mysong %>
+  </div>
+
+<div class="field">
+  <%= form.label :mytime, "Choose a time zone" %>
+  <%= form.select :mytime, options_for_select([
+      ["International Date Line West, -12:00", "-12:00"],
+      ["American Samoa, -11:00", "-11:00"],
+      ["Hawaii, -10:00", "-10:00"],
+      ["Alaska, -09:00", "-09:00"],
+      ["Pacific Time (US & Canada), -08:00", "-08:00"],
+      ["Mountain Time (US & Canada), -07:00", "-07:00"],
+      ["Central Time (US & Canada), -06:00", "-06:00"],
+      ["Eastern Time (US & Canada), -05:00", "-05:00"],
+      ["Atlantic Time (Canada), -04:00", "-04:00"],
+      ["Greenland, -03:00", "-03:00"],
+      ["Mid-Atlantic, -02:00", "-02:00"],
+      ["Cape Verde Is., -01:00", "-01:00"],
+      ["UTC, +00:00", "+00:00"],
+      ["Western Europe Time, +01:00", "+01:00"],
+      ["Central Europe Time, +02:00", "+02:00"],
+      ["Eastern Europe Time, +03:00", "+03:00"],
+      ["Arabia Standard Time, +03:00", "+03:00"],
+      ["Iran, +03:30", "+03:30"],
+      ["Afghanistan, +04:30", "+04:30"],
+      ["Pakistan, +05:00", "+05:00"],
+      ["India, +05:30", "+05:30"],
+      ["Nepal, +05:45", "+05:45"],
+      ["Bangladesh, +06:00", "+06:00"],
+      ["Myanmar, +06:30", "+06:30"],
+      ["Thailand, +07:00", "+07:00"],
+      ["China, +08:00", "+08:00"],
+      ["Japan, +09:00", "+09:00"],
+      ["Central Australia, +09:30", "+09:30"],
+      ["Eastern Australia, +10:00", "+10:00"],
+      ["Solomon Is., +11:00", "+11:00"],
+      ["New Zealand, +12:00", "+12:00"],
+  ], selected: rssradio.mytime) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

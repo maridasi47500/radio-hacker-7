@@ -1,0 +1,47 @@
+<div hidden id="lyrichash"><%=raw (@song.lyrichash)%></div>
+
+<%= form_with(model: song, local: true,html:{class:"lyrics"}) do |form| %>
+  <% if song.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(song.errors.count, "error") %> prohibited this song from being saved:</h2>
+
+      <ul>
+        <% song.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :artist %>
+    <%= form.text_field :artist %>
+  </div>
+
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.text_field :file %>
+  </div>
+<div hidden id="curr_time_m"></div>
+<%if song.lyrics.length > 0%>
+<p>fixe le temp des parole en les cliquant</p>
+<ul class="lyrics">
+<%=form.fields_for :lyrics do |h|%>
+<li onclick="myid<%=h.object.id.to_s%>.value=document.getElementById('curr_time_m').innerHTML;"><%=h.object.content%></li>
+<li><%=h.text_field :mytime, id:"myid"+h.object.id.to_s%></li>
+<%end%>
+</ul>
+<%else%>
+<p >les parole pas ajoutée</p>
+<%end%>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

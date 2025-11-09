@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Jsonradios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Pic</th>
+      <th>Stream</th>
+      <th>Mysong</th>
+      <th>Mytime</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jsonradios.each do |jsonradio| %>
+      <tr>
+        <td><%= jsonradio.name %></td>
+        <td><%= jsonradio.pic %></td>
+        <td><%= jsonradio.stream %></td>
+        <td><%= jsonradio.mysong %></td>
+        <td><%= jsonradio.mytime %></td>
+        <td><%= link_to 'Show', jsonradio %></td>
+        <td><%= link_to 'Edit', edit_jsonradio_path(jsonradio) %></td>
+        <td><%= link_to 'Destroy', jsonradio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jsonradio', new_jsonradio_path %>

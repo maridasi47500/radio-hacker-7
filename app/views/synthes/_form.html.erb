@@ -1,0 +1,22 @@
+<%= form_with(model: synthe, local: true) do |form| %>
+  <% if synthe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(synthe.errors.count, "error") %> prohibited this synthe from being saved:</h2>
+
+      <ul>
+        <% synthe.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :song_id %>
+    <%= form.number_field :song_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

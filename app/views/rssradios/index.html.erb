@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rssradios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Pic</th>
+      <th>Stream</th>
+      <th>Mysong</th>
+      <th>Mytime</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rssradios.each do |rssradio| %>
+      <tr>
+        <td><%= rssradio.name %></td>
+        <td><%= rssradio.pic %></td>
+        <td><%= rssradio.stream %></td>
+        <td><%= rssradio.mysong %></td>
+        <td><%= rssradio.mytime %></td>
+        <td><%= link_to 'Show', rssradio %></td>
+        <td><%= link_to 'Edit', edit_rssradio_path(rssradio) %></td>
+        <td><%= link_to 'Destroy', rssradio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rssradio', new_rssradio_path %>

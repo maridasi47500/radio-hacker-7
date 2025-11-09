@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Synthes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Song</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @synthes.each do |synthe| %>
+      <tr>
+        <td><%= synthe.song_id %></td>
+        <td><%= link_to 'Show', synthe %></td>
+        <td><%= link_to 'Edit', edit_synthe_path(synthe) %></td>
+        <td><%= link_to 'Destroy', synthe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Synthe', new_synthe_path %>

@@ -1,0 +1,2 @@
+class Jsonradio < ApplicationRecord
+end

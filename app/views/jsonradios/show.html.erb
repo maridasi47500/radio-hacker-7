@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @jsonradio.name %>
+</p>
+
+<p>
+  <strong>Pic:</strong>
+  <%= @jsonradio.pic %>
+</p>
+
+<p>
+  <strong>Stream:</strong>
+  <%= @jsonradio.stream %>
+</p>
+
+<p>
+  <strong>Mysong:</strong>
+  <%= @jsonradio.mysong %>
+</p>
+
+<p>
+  <strong>Mytime:</strong>
+  <%= @jsonradio.mytime %>
+</p>
+
+<%= link_to 'Edit', edit_jsonradio_path(@jsonradio) %> |
+<%= link_to 'Back', jsonradios_path %>

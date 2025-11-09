@@ -1,0 +1,8 @@
+--2020-10-14 23:24:38--  http://broadcast.infomaniak.ch/mistralfm-high.mp3
+Résolution de broadcast.infomaniak.ch (broadcast.infomaniak.ch)… 185.74.70.35, 185.74.70.36, 185.74.70.34, ...
+Connexion à broadcast.infomaniak.ch (broadcast.infomaniak.ch)|185.74.70.35|:80… connecté.
+requête HTTP transmise, en attente de la réponse… 200 OK
+Taille : non indiqué [audio/mpeg]
+Enregistre : «file1.mp3»
+
+file1.mp3               [       <=>          ]  31,79M  16,3KB/s               file1.mp3               [      <=>           ]  31,79M  15,2KB/s               file1.mp3               [     <=>            ]  31,80M  15,7KB/s               
