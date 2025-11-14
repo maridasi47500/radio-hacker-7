@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_11_08_024306) do
+ActiveRecord::Schema[8.0].define(version: 2025_11_14_015343) do
   create_table "idontlikes", force: :cascade do |t|
     t.integer "song_id"
     t.datetime "created_at", null: false
@@ -54,6 +54,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_08_024306) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.string "myradio"
+    t.integer "radio_id"
+    t.string "someradio"
   end
 
   create_table "synthes", force: :cascade do |t|

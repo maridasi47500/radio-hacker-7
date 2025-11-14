@@ -51,6 +51,8 @@ n = 13
       "song"=>song,
       "artist"=>artist,
       "title"=>title,
+      "someradio"=>"rss",
+      "radio_id"=>"#{ARGV[0]}",
       "image"=>image,
       "time"=>mytime
 

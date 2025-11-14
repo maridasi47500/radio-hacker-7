@@ -15,7 +15,7 @@ require 'nokogiri'
 ##
 # ligne pour tester
 # à mettre en commentaire plus tard
-class Radio
+class MyRadio
   def initialize
     @date="history/"+Time.new.to_s.scan(/\d+/).join[0..13]
     p "my name".titleize
@@ -51,6 +51,8 @@ n = 0
         "song"=>song,
         "artist"=>artist,
         "myradio"=>"cheriefm",
+        "someradio"=>"json",
+        "radio_id"=>"#{ARGV[0]}",
         "title"=>title,
         "image"=>image,
         "time"=>mytime
@@ -163,6 +165,6 @@ temps = @all #.sort {|x,y| y['time'] <=> x['time']} #.pluck('time')
 \nEOF\nmkdir -p #{@date}; mv cut.rb #{@date}; mv filemusic#{ARGV[0]}.mp3 #{@date};(cd #{@date} && ruby cut.rb);`);
   end
 end
-@rad=Radio.new
+@rad=MyRadio.new
 
 @rad.ecritfichiers
